@@ -1,3 +1,5 @@
 # Flyweight
 
-A description of this package.
+A simple, lightweight networking manager. 
+
+Uses Combine, ideal for UIKit and SwiftUI. 
