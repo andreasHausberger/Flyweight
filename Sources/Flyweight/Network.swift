@@ -142,6 +142,7 @@ public class Network<T: Codable> {
                       (200...299).contains(httpURLResponse.statusCode) else {
                     throw APIError.statusCode
                 }
+                Network.log(style: log, request: request, response: httpURLResponse)
                 return response.data
             }
             .decode(type: T.self, decoder: JSONDecoder()) //decodes the response.data as JSON, and tries to map it to a Codable object.
@@ -150,7 +151,7 @@ public class Network<T: Codable> {
         
     }
     
-    private static func log(style: LoggingStyle, methodName: String, request: URLRequest, response: HTTPURLResponse) {
+    private static func log(style: LoggingStyle, request: URLRequest, response: HTTPURLResponse) {
         switch style {
         case .none:
             break
