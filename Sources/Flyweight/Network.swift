@@ -8,6 +8,8 @@
 import Foundation
 import Combine
 
+@available(OSX 10.15, *)
+@available(iOS 13.0, *)
 public enum Method: String {
     case get = "GET"
     case post = "POST"
@@ -16,6 +18,7 @@ public enum Method: String {
 }
 
 @available(OSX 10.15, *)
+@available(iOS 13.0, *)
 public class Network<T: Codable> {
     
     /**
